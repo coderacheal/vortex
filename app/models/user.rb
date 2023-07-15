@@ -10,5 +10,4 @@ class User < ApplicationRecord
   def return_top_three
     posts.order(created_at: :desc).limit(3)
   end
-  
 end

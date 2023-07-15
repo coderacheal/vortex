@@ -143,6 +143,9 @@ Example command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
+ 
+- **Project 5: Add methods to modeld.**
+- **Project 6: Add validation.**
 - **Project 7: Forms.**
 - **Project 8: Integration specs for Views and fixing n+1 problems.**
 - **Project 9: Add Devise.**

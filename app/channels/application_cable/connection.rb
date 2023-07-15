@@ -19,6 +19,7 @@ class User < ApplicationRecord
     update(posts_counter: posts_counter.count)
   end
 end
+
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
   end

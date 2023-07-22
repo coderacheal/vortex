@@ -1,12 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :request do
-
   before do
-    @user = User.create(id: 745, name: 'Racheal', photo: 'http://myphotos.com', bio: 'Software Girly') # Add other attributes as needed
-    @post = Post.create(author_id: @user.id, id: 3, title: 'Hello World', text: 'Welcome to my blog') # Add other attributes as needed
+    @user = User.create(id: 745, name: 'Racheal', photo: 'http://myphotos.com', bio: 'Software Girly')
+    @post = Post.create(author_id: @user.id, id: 3, title: 'Hello World', text: 'Welcome to my blog')
   end
-  
+
 
   describe 'GET /index' do
     it 'returns a success response' do

@@ -9,6 +9,5 @@ class UsersController < ApplicationController
     @current_user = current_user
   end
 
-  def new
-  end
+  def new; end
 end

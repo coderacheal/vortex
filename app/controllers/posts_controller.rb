@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_action :set_current_user
+  before_action :set_current_user
 
   def index
     @user = User.find(params[:user_id])
@@ -12,8 +12,7 @@ class PostsController < ApplicationController
     @post_comments = Comment.where(post_id: @post)
   end
 
-  def new
-  end
+  def new; end
 
   def create
     # create a new post associated to the current_user
@@ -39,5 +38,4 @@ class PostsController < ApplicationController
   def set_current_user
     @current_user = current_user
   end
-
 end

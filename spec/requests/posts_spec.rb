@@ -42,3 +42,4 @@ RSpec.describe PostsController, type: :request do
     end
   end
 end
+@user = User.create(id: 745, name: 'Racheal', photo: 'http://myphotos.com', bio: 'Software Girly')

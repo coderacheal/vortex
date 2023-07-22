@@ -1,1 +1,11 @@
-<h1> Here is a list of users for this blog </h1>
+<section>
+  <% @all_users.each do |user| %>
+    <div class='each-user'>
+    <div class='user-image'><%= user.photo %></div>
+    <div class='user-activity'>
+      <h1><%= link_to user.name, user_path(user.id) %></h1>
+      <p>Number of posts: <%= user.posts_counter %></p>
+    </div>
+    </div>
+  <% end %>
+</section>

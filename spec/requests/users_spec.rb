@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
+
+  before do
+    @user = User.create(id: 745, name: 'John Doe', photo: 'htttp://myphotos.com', bio: 'Software') # Add other attributes as needed
+  end
+
   describe 'GET /index' do
     it 'returns a success response' do
       get '/users/'

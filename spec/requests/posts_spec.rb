@@ -6,7 +6,6 @@ RSpec.describe PostsController, type: :request do
     @post = Post.create(author_id: @user.id, id: 3, title: 'Hello World', text: 'Welcome to my blog')
   end
 
-
   describe 'GET /index' do
     it 'returns a success response' do
       get '/users/745/posts'

@@ -1,9 +1,9 @@
 <section>
     <div class='each-user'>
-        <div class='user-image'> <%= @user.photo %></div>
+        <div class='user-image'> <%= @current_user.photo %></div>
         <div class='user-activity'>
-            <h1><%= @user.name %></h1>
-            <p>Number of posts: <%= @user.posts_counter %></p>
+            <h1><%= @current_user.name %></h1>
+            <p>Number of posts: <%= @current_user.posts_counter %></p>
         </div>
     </div>
 

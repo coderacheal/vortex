@@ -1,11 +1,11 @@
 <section id="user-details">
   <div class="user-info">
-    <div class="user-photo"><%= @user.photo %></div>
+    <div class="user-photo"><%= @current_user.photo %></div>
     <div class="user-details">
-      <h1 class="user-name"><%= @user.name %></h1>
+      <h1 class="user-name"><%= @current_user.name %></h1>
       <div class="total-posts">
         <h3 class="postCount">
-          Number of posts: <%= @user.posts_counter %>
+          Number of posts: <%= @current_user.posts_counter %>
         </h3>
       </div>
     </div>
@@ -25,7 +25,7 @@
       </div>
       <div class="post">
         <h4>Comments</h4>
-        <% @post_comments.each do |comment| %>
+        <% @recent_comments.each do |comment| %>
           <ul>
             <% if comment.post_id === post.id %>
               <li><%= comment.author.name%>: <%= comment.text %></li>

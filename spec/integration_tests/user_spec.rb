@@ -15,7 +15,6 @@ RSpec.describe User, type: :feature do
   end
 
   describe 'User index page' do
-
     it 'should check the username of all users' do
       visit users_path
       expect(page).to have_content(@user.name)
@@ -88,6 +87,5 @@ RSpec.describe User, type: :feature do
       click_link 'Post 1'
       expect(page).to have_current_path(user_path(@user.id, @posts))
     end
-
   end
 end

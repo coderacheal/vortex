@@ -5,6 +5,7 @@
     <div class='user-activity'>
       <h1><%= link_to user.name, user_path(user.id) %></h1>
       <p>Number of posts: <%= user.posts_counter %></p>
+      <%= link_to 'All Posts', user_posts_path(user) %>
     </div>
     </div>
   <% end %>

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Post, type: :system do
+RSpec.describe Post, type: :feature do
   before :each do
-    @user = User.create(name: 'Ama', photo: 'https://cdn-images-1.medium.com/max/1000/0*l1JFDNkMme1KAiwx',
+    @user = User.create(name: 'Ama', photo: 'a photo of me',
                         bio: 'A girl who codes', posts_counter: 0)
 
     @post = Post.create(author: @user, title: 'First post',
@@ -13,9 +13,9 @@ RSpec.describe Post, type: :system do
   end
 
   describe '- User post index page' do
-    it 'should display the user\'s profile picture' do
+    it 'should display the users profile picture' do
       visit user_posts_path(@user.id, @posts)
-      expect(page).to have_content('https://cdn-images-1.medium.com/max/1000/0*l1JFDNkMme1KAiwx')
+      expect(page).to have_content('a photo of me')
     end
 
     it 'should display the username ' do

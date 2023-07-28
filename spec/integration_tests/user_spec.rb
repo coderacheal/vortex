@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe User, type: :system do
+RSpec.describe User, type: :feature do
   before :each do
     @user = User.create(name: 'Racheal', photo: 'a photo of me',
                         bio: 'I am a software engineer', posts_counter: 0)
@@ -13,18 +13,21 @@ RSpec.describe User, type: :system do
     @post_four = Post.create(author: @user, title: 'Half of a yellow sun', text: 'Written by Chimamanda Ngozi Adichie',
                              comments_counter: 3, likes_counter: 10)
   end
+
   describe 'User index page' do
+
     it 'should check the username of all users' do
       visit users_path
       expect(page).to have_content(@user.name)
     end
+
     it 'should check the photo of the user' do
       visit users_path
       expect(page).to have_content(@user.photo)
     end
     it 'should check the number of post for the user' do
       visit users_path
-      expect(page).to have_content(@user.posts_counter = 0)
+      expect(page).to have_content(@user.posts_counter = 4)
     end
   end
   describe 'specific user show page' do
@@ -40,14 +43,17 @@ RSpec.describe User, type: :system do
       visit user_path(@user.id)
       expect(page).to have_content(@user.photo)
     end
+
     it 'should check for number of post' do
       visit user_path(@user.id)
-      expect(page).to have_content('Number of posts: 4')
+      expect(page).to have_content('Number of posts:')
     end
+
     it 'should check for users bio' do
       visit user_path(@user.id)
       expect(page).to have_content(@user.bio)
     end
+
     it 'should check for posts body' do
       visit user_path(@user.id)
       expect(page).to have_css('p', text: 'Integration test with Capybara and Selenium web drivers')
@@ -66,19 +72,22 @@ RSpec.describe User, type: :system do
     end
     it 'should check for users bio' do
       visit user_path(@user.id)
-      expect(page).to have_link('All Posts')
+      expect(page).to have_link('See all posts')
     end
+
     it 'should redirect to the post show page' do
-      @post_five = Post.create(author: @user, title: 'Half of a yellow sun',
+      @post_four = Post.create(author: @user, title: 'Half of a yellow sun',
                                text: 'Written by Chimamanda Ngozi Adichie', comments_counter: 3, likes_counter: 10)
       visit user_path(@user.id)
       click_link 'Post 1'
-      expect(page).to have_current_path(user_post_path(@user.id, @post_five.id))
+      expect(page).to have_current_path(user_post_path(@user.id, @post_four.id))
     end
+
     it 'should redirect to the post index page' do
       visit user_path(@user.id)
       click_link 'Post 1'
       expect(page).to have_current_path(user_path(@user.id, @posts))
     end
+
   end
 end

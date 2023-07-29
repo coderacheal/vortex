@@ -9,10 +9,6 @@ Rails.application.routes.draw do
   end
 
   #Adding API
-  # namespace :api do
-  #   get 'users', to: 'users#index'
-  # end
-
   namespace :api, defaults: { format: 'json' } do
     resources :users, only: [] do
       resources :posts, only: [:index] do

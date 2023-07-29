@@ -14,7 +14,7 @@
  *= require_self
  */
 
- .each-user {
+.each-user {
   display: grid;
   grid-template-columns: 2fr 6fr;
   gap: 40px;
@@ -147,7 +147,6 @@ body {
   outline: none;
 }
 
-
 .field {
   width: 100%;
   margin: auto;
@@ -162,10 +161,11 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 50%;
+
   /* align-items: center; */
   margin: auto;
   margin-top: 50px;
- 
+
   /* background-color: red; */
 }
 

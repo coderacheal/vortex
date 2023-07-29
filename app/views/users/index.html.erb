@@ -1,4 +1,5 @@
 <section>
+  <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: "submit-button" %>
   <% @all_users.each do |user| %>
     <div class='each-user'>
     <div class='user-image'><%= user.photo %></div>

@@ -14,7 +14,7 @@
     <div class='posts-div'>
         <% @recent_posts.each_with_index do |post, index| %>
             <div class='individual-user-post'>
-                <h1>Post #<%= index+1 %></h1>
+                <%= link_to "Post #{index + 1}", user_post_path(user_id: @current_user.id, id: post.id) %>
                 <p> <%= post.text %></p>
                 <p>
                     Comments: <%= post.comments_counter %>
